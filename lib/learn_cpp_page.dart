@@ -4,6 +4,16 @@ import 'Cpp_topics/cpp_operators_page.dart';
 import 'Cpp_topics/cpp_controlstatement_page.dart';
 import 'Cpp_topics/cpp_functions_page.dart';
 import 'Cpp_topics/cpp_classesandobjects_page.dart';
+import 'Cpp_topics/cpp_inheritance_page.dart';
+import 'Cpp_topics/cpp_polymorphism_page.dart';
+import 'Cpp_topics/cpp_encapsulation_page.dart';
+import 'Cpp_topics/cpp_templates_page.dart';
+import 'Cpp_topics/cpp_STL_page.dart';
+import 'Cpp_topics/cpp_exceptionshandling_page.dart';
+import 'Cpp_topics/cpp_filehandling_page.dart';
+import 'Cpp_topics/cpp_smartpointers_page.dart';
+import 'Cpp_topics/cpp_concurrency_page.dart';
+import 'cpp_subtopics/cpp_programminglanguage_page.dart';
 
 // ignore: must_be_immutable
 class LearnCppPage extends StatelessWidget {
@@ -22,7 +32,6 @@ class LearnCppPage extends StatelessWidget {
     'C++ Exception Handling',
     'C++ File Handling',
     'C++ Smart Pointers',
-    'C++ Lambda Expression',
     'C++ Concurrency',
     // Add more topics as needed
   ];
@@ -32,6 +41,7 @@ class LearnCppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text('Learn C++ Programming'),
       ),
@@ -78,6 +88,86 @@ class LearnCppPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CppClassesAndObjectsPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Inheritance') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppInheritancePage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Polymorphism') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppPolymorphismPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Encapsulation') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppEncapsulationPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Templates') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppTemplatesPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ STL (Standard Template Library)') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppSTLPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Exception Handling') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppExceptionHandlingPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ File Handling') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppFileHandlingPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Smart Pointers') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppSmartPointersPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Concurrency') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppConcurrencyPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C++ Programming Language') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CppProgrammingLanguagePage(),
                   ),
                 );
               }

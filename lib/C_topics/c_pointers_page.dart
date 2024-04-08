@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:jefel_app/c_subtopics/c_pointers1_page.dart';
+import 'package:jefel_app/c_subtopics/c_pointers2_page.dart';
+import 'package:jefel_app/c_subtopics/c_pointers3_page.dart';
+import 'package:jefel_app/c_subtopics/c_pointers4_page.dart';
 
 class CPointersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> subtopics = [
-      'C Pointers',
-      'Pointer Arithmetics in C with Examples',
-      'C-Pointers to Pointer (Double Pointer)',
-      'Function Pointer in C',
-      'How to declare a pointer to a function?',
-      'Pointer to an Array | Array Pointer',
-      'Difference between constant pointer, pointers to constant, and constant pointers to constants',
-      'Pointer vs Array in C',
-      'Dangling, Void, Null and Wild Pointers in C',
-      'Near, Far and Huge Pointers in C',
-      'Restrict keyword in C',
+      'C Pointers Declaration',
+      'C Pointers Initialization',
+      'C Pointers Arithmetic',
+      'C Ponter to Functions',
       // Add more subtopics as needed
     ];
 
@@ -28,6 +25,38 @@ class CPointersPage extends StatelessWidget {
           return ListTile(
             title: Text(subtopics[index]),
             onTap: () {
+              if (subtopics[index] == 'C Pointers Declaration') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPointersDeclarationPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Pointers Initialization') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPointersInitializationPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Pointers Arithmetic') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPointersArithmeticPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Ponter to Functions') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPointerToFunctionsPage(),
+                  ),
+                );
+              }
               // Add navigation logic here
             },
           );

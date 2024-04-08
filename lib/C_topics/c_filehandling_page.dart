@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:jefel_app/c_subtopics/c_filehandling1_page.dart';
+import 'package:jefel_app/c_subtopics/c_filehandling2_page.dart';
+import 'package:jefel_app/c_subtopics/c_filehandling3_page.dart';
+import 'package:jefel_app/c_subtopics/c_filehandling4_page.dart';
 
 class CFileHandlingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> subtopics = [
-      'Basics of File Handling in C',
-      'fgets() and gets() in C language',
-      'fseek() vs rewind() in C',
-      'What is return type of getchar(), fgetc(), and getc() ?',
-      'Read/Write Structure From/to a File in C',
-      'C program to delete a file',
-      'C program to merge contents of two files into a third file',
-      'What is the difference between printf, sprintf and fprintf?',
+      'C Opening',
+      'C Writing',
+      'C Closing files',
+      'C Error handling',
       // Add more subtopics as needed
     ];
 
@@ -25,6 +25,38 @@ class CFileHandlingPage extends StatelessWidget {
           return ListTile(
             title: Text(subtopics[index]),
             onTap: () {
+              if (subtopics[index] == 'C Opening') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => COpeningFileHandlingPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Writing') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CWritingFileHandlingPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Closing files') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CClosingFilesPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Error handling') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CErrorHandlingPage(),
+                  ),
+                );
+              }
               // Add navigation logic here
             },
           );

@@ -3,12 +3,14 @@ import 'C_topics/c_basics_page.dart';
 import 'C_topics/c_operators_page.dart';
 import 'C_topics/c_controlstatementdecision-making.dart';
 import 'C_topics/c_functions_page.dart';
-import 'C_topics/c_arraysandstrings_page.dart';
 import 'C_topics/c_pointers_page.dart'; 
 import 'C_topics/c_structuresandunions_page.dart';
 import 'C_topics/c_filehandling_page.dart';
 import 'C_topics/c_dynamicmemoryallocation_page.dart';
 import 'C_topics/c_preprocessor_page.dart';
+import 'C_topics/c_arrays_page.dart';
+import 'C_topics/c_strings_page.dart';
+import 'c_subtopics/c_programminglanguage_page.dart';
 // Import the CBasicsPage
 
 // ignore: must_be_immutable
@@ -19,7 +21,8 @@ class LearnCPage extends StatelessWidget {
     'C Operators',
     'C Control Statements Decision-Making',
     'C Functions',
-    'C Arrays and Strings',
+    'C Arrays',
+    'C Strings',
     'C Pointers',
     'C Structures and Unions',
     'C File Handling',
@@ -33,6 +36,7 @@ class LearnCPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text('Learn C Programming'),
       ),
@@ -74,14 +78,6 @@ class LearnCPage extends StatelessWidget {
                   ),
                 );
               }
-              if (_topics[index] == 'C Arrays and Strings') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CArraysAndStringsPage(),
-                  ),
-                );
-              }
               if (_topics[index] == 'C Pointers') {
                 Navigator.push(
                   context,
@@ -119,6 +115,30 @@ class LearnCPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => CPreprocessorPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C Arrays') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CArraysPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C Strings') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CStringsPage(),
+                  ),
+                );
+              }
+              if (_topics[index] == 'C Programming Language') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CProgrammingLanguagePage(),
                   ),
                 );
               }

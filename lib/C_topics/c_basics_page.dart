@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:jefel_app/c_subtopics/c_basics1_page.dart';
+import 'package:jefel_app/c_subtopics/c_basics2_page.dart';
+import 'package:jefel_app/c_subtopics/c_basics3_page.dart';
+import 'package:jefel_app/c_subtopics/c_basics4_page.dart';
+import 'package:jefel_app/c_subtopics/c_basics5_page.dart';
+import 'package:jefel_app/c_subtopics/c_basics6_page.dart';
 
 class CBasicsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> subtopics = [
       'C Language Introduction',
-      'Features of C programming Language',
-      'C programming Language Standard',
-      'C Hello World Program',
-      'Compiling a C program: Behind the Scenes',
-      'C Comments',
-      'Tokens in C',
-      'Keywords in C',
+      'C Syntax',
+      'C Data Types',
+      'C Variables',
+      'C Constants',
+      'C Keywords',
       // Add more subtopics as needed
     ];
 
@@ -25,6 +29,54 @@ class CBasicsPage extends StatelessWidget {
           return ListTile(
             title: Text(subtopics[index]),
             onTap: () {
+              if (subtopics[index] == 'C Language Introduction') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CLanguageIntroductionPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Syntax') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CSyntaxPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Data Types') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CDataTypesPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Variables') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CVariablesPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Constants') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CConstantsPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Keywords') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CKeywordsPage(),
+                  ),
+                );
+              }
               // Add navigation logic here
             },
           );

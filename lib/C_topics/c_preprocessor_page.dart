@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:jefel_app/c_subtopics/c_preprocessor1_page.dart';
+import 'package:jefel_app/c_subtopics/c_preprocessor2_page.dart';
+import 'package:jefel_app/c_subtopics/c_preprocessor3_page.dart';
 
 class CPreprocessorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> subtopics = [
-      'C Preprocessors',
-      'C preprocessor Directives',
-      'How a Preprocessor works in C?',
-      'Header Files in C',
-      'Whats difference between header files "stdio.h" and "stdlib.h" ?',
-      'How to write your own header file in C?',
-      '# and ## Operators in C',
-      'How to print variable name in C?',
-      'Difference between #define and const in C?',
-
+      'C #include',
+      'C #define',
+      'C Conditional Compilation (#ifdef, #ifndef, #endif)',
       // Add more subtopics as needed
     ];
 
@@ -27,6 +23,30 @@ class CPreprocessorPage extends StatelessWidget {
           return ListTile(
             title: Text(subtopics[index]),
             onTap: () {
+              if (subtopics[index] == 'C #include') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CProcessorIncludePage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C #define') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPreprocessorDefinePage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C Conditional Compilation (#ifdef, #ifndef, #endif)') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CPreprocessorConditionalCompilationPage(),
+                  ),
+                );
+              }
               // Add navigation logic here
             },
           );

@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:jefel_app/c_subtopics/c_CSDM1_page.dart';
+import 'package:jefel_app/c_subtopics/c_CSDM2_page.dart';
+import 'package:jefel_app/c_subtopics/c_CSDM3_page.dart';
+import 'package:jefel_app/c_subtopics/c_CSDM4_page.dart';
+import 'package:jefel_app/c_subtopics/c_CSDM5_page.dart';
 
 class CControlStatementDecisionMakingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> subtopics = [
-      'Decision Making in C(if, if..else, Nested if, if-else-if)',
-      'C - if Statement',
-      'C if...else Statement',
-      'C if else if ladder',
-      'Switch Statement in C',
-      'Using Range in switch Case in C',
-      'C - Loop',
+      'C if-else',
+      'C switch-case',
       'C for Loop',
-      'while loop in C',
-      'do...while Loop in C',
-      'For Versus While',
-      'Continue Statement in C',
-      'Break Statement in C',
-      'goto Statement in C',
+      'C while loop',
+      'C do-while loop',
       // Add more subtopics as needed
     ];
 
@@ -31,6 +27,47 @@ class CControlStatementDecisionMakingPage extends StatelessWidget {
           return ListTile(
             title: Text(subtopics[index]),
             onTap: () {
+              if (subtopics[index] == 'C if-else') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CIfElsePage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C switch-case') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CSwitchCasePage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C for Loop') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CForLoopPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C while loop') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CWhileLoopPage(),
+                  ),
+                );
+              }
+              if (subtopics[index] == 'C do-while loop') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CDoWhileLoopPage(),
+                  ),
+                );
+              }
+
               // Add navigation logic here
             },
           );
