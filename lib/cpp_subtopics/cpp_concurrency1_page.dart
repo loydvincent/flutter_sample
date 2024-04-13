@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:io';
 
 class CppClassMultithreadingPage extends StatelessWidget {
   @override
@@ -39,12 +39,23 @@ class CppClassMultithreadingPage extends StatelessWidget {
         title: Text('C++ Multi-threading'),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            content,
-            textAlign: TextAlign.justify,
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                content,
+                textAlign: TextAlign.justify,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Add code to compile C++ code here
+              },
+              child: Text('Compile Code'),
+            ),
+          ],
         ),
       ),
     );
