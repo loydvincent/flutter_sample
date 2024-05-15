@@ -50,13 +50,48 @@ class CppClassMultithreadingPage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
-                // Add code to compile C++ code here
-              },
+              onPressed: () => compileCode(context),
               child: Text('Compile Code'),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> compileCode(BuildContext context) async {
+    final file = File('lib/temp_code.cpp');
+    if (!file.existsSync()) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Error'),
+          content: Text('File not found: lib/temp_code.cpp'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Close'),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+
+    final result = await Process.run('g++', ['lib/temp_code.cpp', '-o', 'lib/temp_code']);
+    final output = result.stdout.toString() + result.stderr.toString();
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Compilation Result'),
+        content: Text(output),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Close'),
+          ),
+        ],
       ),
     );
   }
